@@ -1,14 +1,10 @@
-import cats.effect.ExitCode
-import donotmodifyme.Scenario2.database.DatabaseCredentials
-import monix.eval.{Task, TaskApp}
-import review.Scenario2._
+import design.Scenario3._
 
-object App extends TaskApp {
-  def run(args: List[String]): Task[ExitCode] = {
-    val session = new DefaultSession[Task](new DatabaseCredentials {})
-    session.getByKey("").map { result =>
-      println(result)
-    }.map(_ => ExitCode.Success)
-
-  }
+object App extends App {
+  {
+    for {
+      user <- User("QWERTY", "QWERTY", "asdf", 1, 3500, UserType.PaidUser(1))
+      recalculated <- UserLogic.runAtMidnight(user)
+    } yield recalculated
+  }.foreach(println)
 }

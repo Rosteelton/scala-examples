@@ -9,7 +9,8 @@ scalaVersion := "2.12.3"
 libraryDependencies ++= Seq(
   "io.monix" %% "monix" % "3.2.1",
   "org.typelevel" %% "cats-core" % "2.0.0",
-  "org.typelevel" %% "cats-effect" % "2.1.3"
+  "org.typelevel" %% "cats-effect" % "2.1.3",
+  "eu.timepit" %% "refined" % "0.9.14"
 )
 
 scalacOptions ++= Seq(
