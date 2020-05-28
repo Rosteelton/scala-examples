@@ -60,7 +60,6 @@ class MultiQueue[A >: Null] private (
           } else deleteAndUpdateCounter(index2)
       }
     } finally {
-      sizeQ.incrementAndGet()
       releaseLockUnsafe(index1)
       releaseLockUnsafe(index2)
     }
