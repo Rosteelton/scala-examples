@@ -28,7 +28,7 @@ class MultiQueue[A >: Null] private (
 
   private def deleteAndUpdateCounter(index: Int): A = {
     val res = queues(index).deleteMin()
-    sizeQ.incrementAndGet()
+    if (res != null) { sizeQ.decrementAndGet() }
     res
   }
 
