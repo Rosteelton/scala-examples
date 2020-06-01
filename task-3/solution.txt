@@ -1,0 +1,25 @@
+The initial task was not completed in 30 minutes.
+
+Improvements:
+
+1. Standard parallel GC was changed to G1. It provides better support for heaps larger than 4GB.
+
+2. Boxing problem
+There are a lot insufficient data structures with additional allocation costs.
+We wil use `metal` collections. They will avoid any boxing/allocation when accessing, storing and updating elements.
+
+After these steps:
+
+better memory consumption
+see profiling/after.png
+
+log:
+
+Reading connections...
+Graph created in: 31519 [ms]
+Calculating paths...
+Found 14285385 paths in 167838 [ms]
+Printing to file... done in 42624 [ms]
+[success] Total time: 246 s, completed 01.06.2020 9:56:19
+
+It works!

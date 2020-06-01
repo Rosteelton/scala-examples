@@ -16,7 +16,7 @@ object Main {
     }
 
     val UseGraph: GraphType   = GraphType.ReadLarge
-    val UseLessPois: Boolean  = true
+    val UseLessPois: Boolean  = false
   }
 
   case class Problem(

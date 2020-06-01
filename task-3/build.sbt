@@ -33,4 +33,7 @@ resolvers ++= List(
 
 libraryDependencies ++= Seq(
   "org.scalaz" %% "scalaz-core"   % "7.2.15",
-  "org.scalaz" %% "scalaz-effect" % "7.2.15")
+  "org.scalaz" %% "scalaz-effect" % "7.2.15",
+  "org.scala-metal" %% "metal-core" % "0.16.0.0",
+  "org.scala-metal" %% "metal-library" % "0.16.0.0"
+)

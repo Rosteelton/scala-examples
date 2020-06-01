@@ -3,6 +3,8 @@ package task1.modifyme
 /*
  * A collection of visited labels `A`.
  */
+import metal.syntax._
+
 abstract class Visited[A] {
   /*
    * Should return `true` if `this.updated` was never called with `a`.
@@ -15,10 +17,10 @@ abstract class Visited[A] {
 }
 
 object Visited {
-  def empty = new SetVisited(new scala.collection.mutable.HashSet[Int])
+  def empty = new SetVisited(metal.mutable.HashSet[Int]())
 }
 
-case class SetVisited(val underlying: scala.collection.mutable.Set[Int]) extends Visited[Int] {
+case class SetVisited(val underlying: metal.mutable.Set[Int]) extends Visited[Int] {
   override def notVisited(a: Int) = !underlying.contains(a)
   override def updated(a: Int): Unit= {
     underlying += a
